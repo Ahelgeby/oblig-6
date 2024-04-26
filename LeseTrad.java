@@ -1,4 +1,5 @@
-public class LeseTrad extends Thread{
+import java.util.HashMap;
+public class LeseTrad implements Runnable{
     Monitor2 monitor;
     String filnavn;
 
@@ -6,9 +7,10 @@ public class LeseTrad extends Thread{
         monitor = m;
         filnavn = f;
     }
-    @Override
     public void run(){
-        monitor.leggTil(monitor.lesFil(filnavn));
+        HashMap<String, Subsekvens> hash = monitor.lesFil(filnavn);
+        monitor.leggTil(hash);
+        System.out.println("Lesetraad lagt til hashmap fra fil");
     }
 
 

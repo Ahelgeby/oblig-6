@@ -1,4 +1,6 @@
-public class FletteTrad extends Thread{
+import java.util.HashMap;
+import java.util.ArrayList;
+public class FletteTrad implements Runnable{
     Monitor2 monitor;
     static int teller = 1;
     int tradnr;
@@ -8,20 +10,16 @@ public class FletteTrad extends Thread{
         teller++;
     }
 
-    @Override
     public void run(){
+        while(monitor.stoerrelse() >=2){
+        ArrayList<HashMap<String,Subsekvens>> hashes = new ArrayList<>();
         try{
-        while(monitor.stoerrelse() != 1){
-            monitor.flett(1,0);
-            System.out.println("Trad nummer: " + tradnr + " eksekverer");
-        }
+            hashes = monitor.taUtTo();
+            HashMap<String,Subsekvens> flettet = monitor.flett(hashes.get(0), hashes.get(1));
+            monitor.leggTilFlettet(flettet);
         }catch(InterruptedException e){
-            System.out.println("interrupted");
-        }
-        
+            ;
     }
-
-
-    
-
+    }
+}
 }
