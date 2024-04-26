@@ -18,7 +18,6 @@ public class FletteTrad implements Runnable{
             HashMap<String,Subsekvens> flettet = monitor.flett(hashes.get(0), hashes.get(1));
             monitor.leggTilFlettet(flettet);
         }catch(InterruptedException e){
-            ;
     }
     }
 }

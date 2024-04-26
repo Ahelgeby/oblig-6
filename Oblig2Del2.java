@@ -39,14 +39,13 @@ public class Oblig2Del2 {
             trad.start();
         }
 
-        for(int i = 0; i<flettetrader.length-1; i++){
+        for(int i = 0; i<flettetrader.length; i++){
             try{
                 flettetrader[i].join();
             }catch(InterruptedException interrupt){
                 System.out.println("Thread interrupted");
             }
         }
-        monitor.skrivStoerste();
 
     }
     

@@ -39,9 +39,6 @@ public class SubsekvensRegister {
         Subsekvens s = null;
         int max = 0;
         for(String key : sekvensListe.get(0).keySet()){
-            // if(key.equals("QYF")){
-            //     System.out.println(sekvensListe.get(0).get(key).hentAntall());
-            //}
             if (sekvensListe.get(0).get(key).hentAntall() > max){
                 max = sekvensListe.get(0).get(key).hentAntall();
                 s = sekvensListe.get(0).get(key);

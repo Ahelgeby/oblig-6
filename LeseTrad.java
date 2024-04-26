@@ -10,7 +10,6 @@ public class LeseTrad implements Runnable{
     public void run(){
         HashMap<String, Subsekvens> hash = monitor.lesFil(filnavn);
         monitor.leggTil(hash);
-        System.out.println("Lesetraad lagt til hashmap fra fil");
     }
 
 
